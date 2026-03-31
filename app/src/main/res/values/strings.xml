@@ -8,4 +8,7 @@
     <string name="board_4_4">4 x 4</string>
     <string name="board_4_5">4 x 5</string>
     <string name="board_5_2">5 x 2</string>
+    <string name="board_activity_menu_sound">Sound</string>
+    <string name="sound_on">Sound turn on</string>
+    <string name="sound_off">Sound turn off</string>
 </resources>

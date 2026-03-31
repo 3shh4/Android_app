@@ -6,7 +6,6 @@ import android.widget.Button
 import android.widget.CheckBox
 import android.widget.LinearLayout
 import android.widget.ProgressBar
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import pl.wsei.pam.lab01.R
 import kotlin.math.abs
@@ -14,7 +13,6 @@ import kotlin.math.abs
 class Lab01Activity : AppCompatActivity() {
 
     lateinit var mLayout: LinearLayout
-    lateinit var mTitle: TextView
     lateinit var mProgress: ProgressBar
 
     var mBoxes: MutableList<CheckBox> = mutableListOf()
@@ -26,20 +24,11 @@ class Lab01Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lab01)
 
+        supportActionBar?.title = "Lab01"
+
         mLayout = findViewById(R.id.main)
 
-        mTitle = TextView(this)
-        mTitle.text = "Laboratorium 1"
-        mTitle.textSize = 24f
-        val params = LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
-        params.setMargins(20, 20, 20, 20)
-        mTitle.textAlignment = TextView.TEXT_ALIGNMENT_CENTER
-        mTitle.layoutParams = params
-
-        mLayout.addView(mTitle)
-
         for (i in 1..6) {
-
             val row = LinearLayout(this)
             row.layoutParams = LinearLayout.LayoutParams(
                 LayoutParams.MATCH_PARENT,
@@ -82,9 +71,7 @@ class Lab01Activity : AppCompatActivity() {
     }
 
     private fun runTest(i: Int) {
-
         val ok = when (i) {
-
             1 -> (
                     task11(4, 6) in 0.666665..0.666667 &&
                             task11(7, -6) in -1.1666667..-1.1666665
@@ -178,16 +165,12 @@ class Lab01Activity : AppCompatActivity() {
     }
 
     fun task16(store: Map<String, UInt>, asset: Map<String, UInt>): UInt {
-
         var result: UInt? = null
 
         for ((key, need) in asset) {
-
             val have = store[key] ?: 0U
-
             val possible = have / need
-
-            result = if (result == null) possible else minOf(result!!, possible)
+            result = if (result == null) possible else minOf(result, possible)
         }
 
         return result ?: 0U

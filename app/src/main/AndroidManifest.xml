@@ -30,6 +30,10 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name="pl.wsei.pam.lab03.Lab03Activity"
+            android:exported="false" />
+
     </application>
 
 </manifest>
