@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.45" />
+        app:layout_constraintVertical_bias="0.4" />
 
     <Button
         android:id="@+id/mainBtnRunLab02"
@@ -26,8 +26,20 @@
         android:layout_marginTop="16dp"
         android:onClick="onClickMainBtnRunLab02"
         android:text="@string/lab02"
+        app:layout_constraintBottom_toTopOf="@+id/mainBtnRunLab06"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/mainBtnRunLab01" />
+
+    <Button
+        android:id="@+id/mainBtnRunLab06"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="onClickMainBtnRunLab06"
+        android:text="Lab06"
+        app:layout_constraintTop_toBottomOf="@id/mainBtnRunLab02"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
